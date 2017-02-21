@@ -3,7 +3,7 @@
  *
  * http://jqueryvalidation.org/
  *
- * Copyright (c) 2014 Jörn Zaefferer
+ * Copyright (c) 2017 Jörn Zaefferer
  * Released under the MIT license
  */
 (function( factory ) {
@@ -1265,6 +1265,7 @@ $.extend( $.validator, {
 			param = typeof param === "string" && { url: param } || param;
 
 			if ( previous.old === value ) {
+				this.stopRequest( element, previous.valid );
 				return previous.valid;
 			}
 

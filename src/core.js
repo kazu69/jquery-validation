@@ -1249,6 +1249,7 @@ $.extend( $.validator, {
 			param = typeof param === "string" && { url: param } || param;
 
 			if ( previous.old === value ) {
+				this.stopRequest( element, previous.valid );
 				return previous.valid;
 			}
 
